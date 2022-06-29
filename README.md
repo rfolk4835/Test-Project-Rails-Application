@@ -1,1 +1,1 @@
-# Interview-Test-Project
+# Test Project Rails Application
