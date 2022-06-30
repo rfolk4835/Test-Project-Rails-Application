@@ -1,0 +1,1 @@
+# is_admin isn't returning json reponses

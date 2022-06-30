@@ -69,11 +69,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'interviewproject.wsgi.application'
 
+# Start
+# Custom user selected as default
+
 AUTH_USER_MODEL = 'models.users'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+# changed settings to use postgresql instead of sqlite
 
 DATABASES = {
 
