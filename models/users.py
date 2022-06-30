@@ -6,3 +6,9 @@ class Users(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=100)
     born_on = models.DateField()
     is_admin = models.BooleanField(default=False)
+
+    USERNAME_FIELD = 'first_name' + 'last_name'
+    REQUIRED_FIELDS = []
+
+    def __str__(self):
+        return self.USERNAME_FIELD

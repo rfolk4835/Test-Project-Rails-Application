@@ -69,15 +69,30 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'interviewproject.wsgi.application'
 
+AUTH_USER_MODEL = 'models.users'
+
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'local_test_server',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'password1',
+
+        'HOST': 'localhost',
+
+        'PORT': '5432',
+
     }
+
 }
 
 
