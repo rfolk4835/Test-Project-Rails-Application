@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1ov2^=%)+$hctw-vp%q53_fe0j__=wb-=t$b7awrl%djfv09+)'
+SECRET_KEY = 'django-insecure-i(-70$x@p^8t4l!+dgf9m$icc%4(v*cgh&lfy$clw5=2vvbfno'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,6 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# Start 
+# 'users' added under installed apps
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -69,34 +74,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'interviewproject.wsgi.application'
 
-# Start
-# Custom user selected as default
-
-AUTH_USER_MODEL = 'models.users'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-# changed settings to use postgresql instead of sqlite
 
 DATABASES = {
-
     'default': {
-
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-        'NAME': 'local_test_server',
-
-        'USER': 'postgres',
-
-        'PASSWORD': 'password1',
-
-        'HOST': 'localhost',
-
-        'PORT': '5432',
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-
 }
 
 

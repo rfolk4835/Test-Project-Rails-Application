@@ -1,1 +1,0 @@
-# user_controller response is :ok
