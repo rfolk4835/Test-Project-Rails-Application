@@ -6,8 +6,6 @@ from .controllers import CustomUserController
 # Intialized user with 4 variables
 # Equivalent to 'database_design.sql'
 
-# AUTH_USER_MODEL = 'models.users'
-
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)

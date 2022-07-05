@@ -1,13 +1,11 @@
 from django.contrib.auth.base_user import BaseUserManager
 
+class CustomUserController(BaseUserManager):
+    def CreateUser(self, first_name, last_name, born_on, is_admin):
+        pass
 
-# Start
-# 'index' should return json response for each user, combining 'first_name' and 'last_name'
-# exclude is_admin from the response
-
-#class CustomUserController(BaseUserManager):
+    def CreateAdmin():
+        pass
 
 
 
-# Feature
-# Support passing a parameter 'params[:search]' to query on 'last_name'
