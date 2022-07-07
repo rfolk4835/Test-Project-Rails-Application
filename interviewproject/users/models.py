@@ -11,7 +11,6 @@ class CustomUser(models.Model):
     is_admin = models.BooleanField(default=False)
 
     objects = models.Manager
-    # objects = CustomUserController()
 
     def __str__(self):
         return self.first_name
