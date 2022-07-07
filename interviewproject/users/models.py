@@ -1,5 +1,4 @@
 from django.db import models
-from .controllers import CustomUserController
 
 # Start
 # Intialized user with 4 variables
@@ -11,6 +10,11 @@ class CustomUser(models.Model):
     born_on = models.DateField()
     is_admin = models.BooleanField(default=False)
 
-    objects = CustomUserController()
+    objects = models.Manager
+    # objects = CustomUserController()
+
+    def __str__(self):
+        return self.first_name
+
 
 
