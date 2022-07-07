@@ -9,11 +9,17 @@ from django.db.models.functions import Concat
 # exclude is_admin from the response
 
 def Index(request):
-    data = list(CustomUser.objects.annotate(full_name = Concat('first_name', V(' '), 'last_name')).exclude('is_admin','first_name','last_name'))
+    data = list(CustomUser.objects.annotate(
+        full_name = Concat('first_name', V(' '), 'last_name')).exclude(
+            'is_admin','first_name','last_name').values())
     return JsonResponse(data)
 
 # Feature
 # Support passing a parameter 'params[:search]' to query on 'last_name'
 
-def Query_last_name(request):
-    pass
+def Query_last_name_Prefix(request,last_name_prefix):
+    data = list(CustomUser.objects.annotate(
+        full_name = Concat('first_name', V(' '), 'last_name')).exclude(
+            'is_admin','first_name','last_name').filter(
+                last_name__startswith = last_name_prefix).values())
+    return JsonResponse(data)
