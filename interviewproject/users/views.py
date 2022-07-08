@@ -10,7 +10,6 @@ from django.db.models.functions import Concat
 
 
 def dict_map(v):
-    print(v)
     full_name = "%s %s" % (v["first_name"], v["last_name"])
     return {"id": v["id"], "full_name": full_name, "born_on": v["born_on"]}
 
