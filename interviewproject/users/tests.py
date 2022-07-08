@@ -1,15 +1,13 @@
-from django.test import TestCase
-from django.contrib.auth import get_user_model
+from django.test import TestCase, Client
+from django.urls import reverse
+
+client = Client()
 
 # user_controller response is :ok
 # is_admin isn't returning json reponses
 
+
 class usersTests(TestCase):
-
     def test_ControllerResponse(self):
-        pass
-    
-    def test_JsonResponse(self):
-        pass
-
-
+        response = client.get(reverse("users:index"))
+        self.assertEqual(response.status_code, 200)

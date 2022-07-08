@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
+app_name = "users"
 urlpatterns = [
-    path('', views.Index, name = 'index'),
-    path('users/<str:last_name_prefix>', views.Query_last_name_Prefix, name = 'query_last_name_prefix'),
+    path("", views.index, name="index"),
 ]
