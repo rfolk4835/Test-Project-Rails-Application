@@ -21,4 +21,4 @@ def index(request):
     data = [dict_map(v) for v in data]
 
     print(data)
-    return JsonResponse(data, safe=False)
+    return JsonResponse({"users": data}, safe=False)
