@@ -13,7 +13,7 @@ class CustomUser(models.Model):
     objects = models.Manager
 
     def __str__(self):
-        return self.first_name
+        return self.first_name + ' ' + self.last_name
 
 
 

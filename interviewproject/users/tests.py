@@ -3,9 +3,10 @@ from django.test import TestCase
 from .models import CustomUser
 from django.urls import reverse
 
+
 # Wrap Up
-# test user controller response is ok. Accomplished by checking the response status code
-# is_admin isn't returning json reponses
+# test user controller response is ok. 
+# test is_admin isn't returning json reponses. 
 
 class usersTests(TestCase):
     def setupTestData(self):
@@ -16,8 +17,11 @@ class usersTests(TestCase):
         response = self.client.get('users/')
         self.assertEqual(response.status_code, 200)
 
-    def test_JsonResponse(self):
-        pass
+    def test_JsonResponse_Index(self):
+        response = self.client.get('users/index')
+
+    def test_JsonResponse_Query(self):
+        response = self.client.get('users/query/Wil')
 
 
 
