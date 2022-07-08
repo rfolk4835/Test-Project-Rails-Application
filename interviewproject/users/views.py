@@ -1,8 +1,5 @@
-from django.shortcuts import render
 from django.http import JsonResponse
 from .models import User
-from django.db.models import Value as V
-from django.db.models.functions import Concat
 
 # Start
 # 'index' should return json response for each user, combining 'first_name' and 'last_name'
