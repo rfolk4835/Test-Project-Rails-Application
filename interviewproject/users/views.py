@@ -5,6 +5,10 @@ from .models import User
 # 'index' should return json response for each user, combining 'first_name' and 'last_name'
 # exclude is_admin from the response
 
+# Feature 
+# Support passing in a parameter when a parameter is present in 'index'
+# Filter by last_name using a begins with search
+
 
 def dict_map(v):
     full_name = "%s %s" % (v["first_name"], v["last_name"])
