@@ -4,7 +4,8 @@ from django.db import models
 # Intialized user with 4 variables
 # Equivalent to 'database_design.sql'
 
-class CustomUser(models.Model):
+
+class User(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     born_on = models.DateField()
@@ -13,7 +14,4 @@ class CustomUser(models.Model):
     objects = models.Manager
 
     def __str__(self):
-        return self.first_name + ' ' + self.last_name
-
-
-
+        return self.first_name
