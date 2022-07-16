@@ -15,10 +15,14 @@ def dict_map(v):
     return {"id": v["id"], "full_name": full_name, "born_on": v["born_on"]}
 
 
-def index(request):
+def index(request, name_query):
     queryset = User.objects.all()[0:100]
-    data = list(queryset.values())
-    data = [dict_map(v) for v in data]
+    if (not name_query):
+        nameset = queryset.filter(last_name__startswith = name_query)
+        data = list(nameset.values())
+    else:
+        data = list(queryset.values())
 
+    data = [dict_map(v) for v in data]
     print(data)
     return JsonResponse({"users": data}, safe=False)
