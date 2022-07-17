@@ -3,6 +3,6 @@ from . import views
 
 app_name = "users"
 urlpatterns = [
-    path("", views.index, name="index"),
-    path(".json?search=<str:last_name>", views.index, name="index")
+    path("query/<str:last_name>", views.query, name="query"),
+    path("index/", views.index, name="index"),
 ]
