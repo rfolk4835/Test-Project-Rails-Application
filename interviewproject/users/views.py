@@ -19,6 +19,7 @@ def index(request):
     queryset = User.objects.all()[0:100]
     data = list(queryset.values())
     data = [dict_map(v) for v in data]
+
     print(data)
     return JsonResponse({"users": data}, safe=False)
 
@@ -26,5 +27,6 @@ def query(request, last_name):
     queryset = User.objects.filter(last_name__startswith = last_name)[0:100]
     data = list(queryset.values())
     data = [dict_map(v) for v in data]
+    
     print(data)
     return JsonResponse({"users": data}, safe=False)
