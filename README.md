@@ -6,13 +6,7 @@
 -	Suggested to use either Django or Flask, chose Django
 -	Could choose between PostgreSQL or SQLite, switch between the two
 -	Originally given 3 hours to complete, time limit later removed
--	Steps included:
--- Creating the Django database
--- Implement a new custom user
--- Add a user controller
--- Add a way to view users’ specific information in an index using JSON
--- Support a query/search feature on the users last name,
--- Have tests for the controller and these two views 
+-	Steps included: Creating the Django database, Implement a new custom user, Add a user controller, Add a way to view       users’ specific information in an index using JSON, Support a query/search feature on the users last name, Have tests for the controller and these two views 
 
 ### Successes 
 
